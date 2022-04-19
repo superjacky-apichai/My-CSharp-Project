@@ -42,11 +42,17 @@ namespace Tic_Tac_Toe
 
 
 
-
-                        putXO(player, input);
-                        Console.WriteLine("you occupied this channel!!");
-                        Console.WriteLine();
-                        break;
+                        if (input < 1 || input > 9)
+                        {
+                            Console.WriteLine("Pleases enter number in range 1-9");
+                        }
+                        else
+                        {
+                            putXO(player, input);
+                            Console.WriteLine("you occupied this channel!!");
+                            Console.WriteLine();
+                            break;
+                        }
 
 
 
@@ -171,22 +177,22 @@ namespace Tic_Tac_Toe
 
             if (field[0, 0] == "X" && field[1, 1] == "X" && field[2, 2] == "X")
             {
-                Console.WriteLine("XWin");
+                Console.WriteLine("X WIN");
                 return true;
             }
             else if (field[0, 0] == "O" && field[1, 1] == "O" && field[2, 2] == "O")
             {
-                Console.WriteLine("OWin");
+                Console.WriteLine("O WIN");
                 return true;
             }
             else if (field[0, 2] == "X" && field[1, 1] == "X" && field[2, 0] == "X")
             {
-                Console.WriteLine("XWin");
+                Console.WriteLine("X WIN");
                 return true;
             }
             else if (field[0, 2] == "O" && field[1, 1] == "O" && field[2, 0] == "O")
             {
-                Console.WriteLine("OWin");
+                Console.WriteLine("O WIN");
                 return true;
             }
 
@@ -198,22 +204,22 @@ namespace Tic_Tac_Toe
                 {
                     if (field[i, 0] == "X" && field[i, 1] == "X" && field[i, 2] == "X")
                     {
-                        Console.WriteLine("XWin");
+                        Console.WriteLine("X WIN");
                         return true;
                     }
                     else if (field[i, 0] == "O" && field[i, 1] == "O" && field[i, 2] == "O")
                     {
-                        Console.WriteLine("OWin");
+                        Console.WriteLine("O WIN");
                         return true;
                     }
                     else if (field[0, j] == "X" && field[1, j] == "X" && field[2, j] == "X")
                     {
-                        Console.WriteLine("XWin");
+                        Console.WriteLine("X WIN");
                         return true;
                     }
                     else if (field[0, j] == "O" && field[1, j] == "O" && field[2, j] == "O")
                     {
-                        Console.WriteLine("OWin");
+                        Console.WriteLine("O WIN");
                         return true;
                     }
                 }
