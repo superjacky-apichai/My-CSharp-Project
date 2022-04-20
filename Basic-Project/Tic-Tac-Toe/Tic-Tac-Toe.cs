@@ -4,91 +4,152 @@ namespace Tic_Tac_Toe
 {
     internal class Program
     {
-        static string[,] field =
+        static string[,] field = // create field for playing game
            {
-            {"1","2","3" },
-            {"4","5","6"},
-            {"7","8","9"}
+            {"1","2","3" }, // row 1
+            {"4","5","6"},// row 2
+            {"7","8","9"}// row 3
 
         };
 
+        static string[,] forResetField = // create field for backup if game is over
+         {
+            {"1","2","3" }, // row 1
+            {"4","5","6"},// row 2
+            {"7","8","9"}// row 3
+
+        };
+
+
         static void Main(string[] args)
         {
-
+            //player variable for check player1 turn or player 2 turn
             int player = 2;
+
+            //input variable for input position in field for player to occupie
             int input = 0;
 
-
-
-
-            do
+           // this loop for reset or exit program if game is over
+            while (true)
             {
-                printField();
-                if (player == 1)
-                {
-                    player = 2;
-                }
-                else if (player == 2)
-                {
-                    player = 1;
-                }
+                printField(); //printField function for output OX play field
+                player = 2; //set player to 2 every time we start the game
 
-
-                do
+                do // this loop for continue the game if the game still don't over yet and change player turn
                 {
-                    Console.Write("Player {0}: Choose your field! ", player);
-                    if (int.TryParse(Console.ReadLine(), out input) && isOccupied(input))
+                    
+                    
+                    //set player who will pick the field this turn 
+                    if (player == 1)
                     {
-
-
-
-                        if (input < 1 || input > 9)
-                        {
-                            Console.WriteLine("Pleases enter number in range 1-9");
-                        }
-                        else
-                        {
-                            putXO(player, input);
-                            Console.WriteLine("you occupied this channel!!");
-                            Console.WriteLine();
-                            break;
-                        }
-
-
-
-
-
-
+                        player = 2;
                     }
-                    else
+                    else if (player == 2)
                     {
-                        if (!isOccupied(input))
-                        {
-
-                            Console.WriteLine("This channel has been occupied!!");
-
-                        }
-                        else
-                        {
-                            Console.WriteLine("Wrong input!!");
-                        }
-
+                        player = 1;
                     }
 
-                } while (true);
+
+                    do//this loop for check is correct input if wrong input the loop will continue 
+                    {
+                        Console.Write("Player {0}: Choose your field! ", player); //output who will choose field in this turn 
+                        if (int.TryParse(Console.ReadLine(), out input) && isOccupied(input))//conditon if correct input or wrong input and this check player choose dumplicate field
+                        {
+
+
+
+                            if (input < 1 || input > 9) //this wrong input if input number less than 1 or great than 9
+                            {
+                                Console.WriteLine("Pleases enter number in range 1-9");
+                            }
+                            else
+                            {
+                                //this condition will set the field if input correctly and break the check input loop
+                                putXO(player, input);
+                                Console.WriteLine("you occupied this channel!!");
+                                Console.WriteLine();
+                                break;
+                            }
 
 
 
 
-            } while (!checkWinner());
+
+
+                        }
+                        else//this condition will active if wrong input or field that player choose  has occupied
+                        {
+                            if (!isOccupied(input))//this conditoin will active if field that player choose  has occupied
+                            {
+
+                                Console.WriteLine("This channel has been occupied!!");
+
+                            }
+                            else // this conditoin will active if this condition will active if wrong input 
+                            {
+                                Console.WriteLine("Wrong input!!");
+                            }
+
+                        }
+
+                    } while (true);//use while true cuase need 1 condition to break this loop isit's correct input
 
 
 
-            Console.Read();
+
+                } while (!checkWinner());//check is game over yet is over this loop will break
+
+                int choice = 0; //choice variable to set condition reset game or exit the program
+
+                while (true)//this loop will check input correct or wrong input if it wrong loop will continue else loop will break
+                {
+                    Console.WriteLine("enter key for reset or exit field"); //out put to tell user input the choice
+                    Console.WriteLine("1.For reset");
+                    Console.WriteLine("2.For exit");
+
+                    if (int.TryParse(Console.ReadLine(), out choice)) //this condition will active if input correct 
+                    {
+
+                        if (choice < 1 || choice > 2)//this condition will check even correct input but are they still in range
+                        {
+                            Console.WriteLine("out of range pleases enter number in rang 1 - 2");
+                            continue;
+                        }
+
+                        break;
+
+                    }
+                    else//this condition will active if it wrong input
+                    {
+                        Console.WriteLine("Wrong input!!");
+                        continue;
+                    }
+                    
+                    
+
+
+                }
+
+
+               //this condition will manage the program will reset or it will exit
+                if (choice == 1)
+                {
+                    field = forResetField;
+                   
+                }else if(choice == 2)
+                {
+                    Console.WriteLine("Good bye!!!");
+                    break;
+                }
+
+                
+            }
+
         }
 
 
 
+        //this function use to print the field
         static void printField()
         {
             Console.Clear();
@@ -106,7 +167,7 @@ namespace Tic_Tac_Toe
                                , field[2, 0], field[2, 1], field[2, 2]);
         }
 
-
+        //this function use to check the field player choose has occupied or not
         public static bool isOccupied(int input)
         {
             bool checker = true;
@@ -138,6 +199,7 @@ namespace Tic_Tac_Toe
         }
 
 
+        //this function set field player choose turn into X or O 
         static void putXO(int player, int input)
         {
             char playerSign = ' ';
@@ -170,31 +232,23 @@ namespace Tic_Tac_Toe
 
 
         }
-
+        
+        //this function check who will win in the game
         static bool checkWinner()
         {
+            printField();
 
-
-            if (field[0, 0] == "X" && field[1, 1] == "X" && field[2, 2] == "X")
+            if ((field[0, 0] == "X" && field[1, 1] == "X" && field[2, 2] == "X")|| (field[0, 2] == "X" && field[1, 1] == "X" && field[2, 0] == "X"))
             {
-                Console.WriteLine("X WIN");
+                Console.WriteLine("X WIN!!!");
                 return true;
             }
-            else if (field[0, 0] == "O" && field[1, 1] == "O" && field[2, 2] == "O")
+            else if ((field[0, 0] == "O" && field[1, 1] == "O" && field[2, 2] == "O")|| (field[0, 2] == "O" && field[1, 1] == "O" && field[2, 0] == "O"))
             {
-                Console.WriteLine("O WIN");
+                Console.WriteLine("O WIN!!!");
                 return true;
             }
-            else if (field[0, 2] == "X" && field[1, 1] == "X" && field[2, 0] == "X")
-            {
-                Console.WriteLine("X WIN");
-                return true;
-            }
-            else if (field[0, 2] == "O" && field[1, 1] == "O" && field[2, 0] == "O")
-            {
-                Console.WriteLine("O WIN");
-                return true;
-            }
+            
 
 
 
@@ -202,26 +256,17 @@ namespace Tic_Tac_Toe
             {
                 for (int j = 0; j < field.GetLength(1); j++)
                 {
-                    if (field[i, 0] == "X" && field[i, 1] == "X" && field[i, 2] == "X")
+                    if ((field[i, 0] == "X" && field[i, 1] == "X" && field[i, 2] == "X")||(field[0, j] == "X" && field[1, j] == "X" && field[2, j] == "X"))
                     {
-                        Console.WriteLine("X WIN");
+                        Console.WriteLine("X WIN!!!");
                         return true;
                     }
-                    else if (field[i, 0] == "O" && field[i, 1] == "O" && field[i, 2] == "O")
+                    else if ((field[i, 0] == "O" && field[i, 1] == "O" && field[i, 2] == "O")|| (field[0, j] == "O" && field[1, j] == "O" && field[2, j] == "O"))
                     {
-                        Console.WriteLine("O WIN");
+                        Console.WriteLine("O WIN!!!");
                         return true;
                     }
-                    else if (field[0, j] == "X" && field[1, j] == "X" && field[2, j] == "X")
-                    {
-                        Console.WriteLine("X WIN");
-                        return true;
-                    }
-                    else if (field[0, j] == "O" && field[1, j] == "O" && field[2, j] == "O")
-                    {
-                        Console.WriteLine("O WIN");
-                        return true;
-                    }
+                   
                 }
             }
 
