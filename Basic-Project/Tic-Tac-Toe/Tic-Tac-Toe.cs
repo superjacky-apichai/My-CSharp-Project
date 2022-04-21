@@ -20,6 +20,8 @@ namespace Tic_Tac_Toe
 
         };
 
+        static int count = 0; //check loop if player choose all field
+
 
         static void Main(string[] args)
         {
@@ -29,7 +31,7 @@ namespace Tic_Tac_Toe
             //input variable for input position in field for player to occupie
             int input = 0;
 
-           // this loop for reset or exit program if game is over
+            // this loop for reset or exit program if game is over
             while (true)
             {
                 printField(); //printField function for output OX play field
@@ -37,8 +39,8 @@ namespace Tic_Tac_Toe
 
                 do // this loop for continue the game if the game still don't over yet and change player turn
                 {
-                    
-                    
+
+
                     //set player who will pick the field this turn 
                     if (player == 1)
                     {
@@ -66,6 +68,7 @@ namespace Tic_Tac_Toe
                             {
                                 //this condition will set the field if input correctly and break the check input loop
                                 putXO(player, input);
+                                count++;//cout the field
                                 Console.WriteLine("you occupied this channel!!");
                                 Console.WriteLine();
                                 break;
@@ -124,25 +127,26 @@ namespace Tic_Tac_Toe
                         Console.WriteLine("Wrong input!!");
                         continue;
                     }
-                    
-                    
+
+
 
 
                 }
 
 
-               //this condition will manage the program will reset or it will exit
+                //this condition will manage the program will reset or it will exit
                 if (choice == 1)
                 {
                     field = forResetField;
-                   
-                }else if(choice == 2)
+                    count = 0;
+                }
+                else if (choice == 2)
                 {
                     Console.WriteLine("Good bye!!!");
                     break;
                 }
 
-                
+
             }
 
         }
@@ -232,23 +236,23 @@ namespace Tic_Tac_Toe
 
 
         }
-        
+
         //this function check who will win in the game
         static bool checkWinner()
         {
             printField();
 
-            if ((field[0, 0] == "X" && field[1, 1] == "X" && field[2, 2] == "X")|| (field[0, 2] == "X" && field[1, 1] == "X" && field[2, 0] == "X"))
+            if ((field[0, 0] == "X" && field[1, 1] == "X" && field[2, 2] == "X") || (field[0, 2] == "X" && field[1, 1] == "X" && field[2, 0] == "X"))
             {
                 Console.WriteLine("X WIN!!!");
                 return true;
             }
-            else if ((field[0, 0] == "O" && field[1, 1] == "O" && field[2, 2] == "O")|| (field[0, 2] == "O" && field[1, 1] == "O" && field[2, 0] == "O"))
+            else if ((field[0, 0] == "O" && field[1, 1] == "O" && field[2, 2] == "O") || (field[0, 2] == "O" && field[1, 1] == "O" && field[2, 0] == "O"))
             {
                 Console.WriteLine("O WIN!!!");
                 return true;
             }
-            
+
 
 
 
@@ -256,18 +260,24 @@ namespace Tic_Tac_Toe
             {
                 for (int j = 0; j < field.GetLength(1); j++)
                 {
-                    if ((field[i, 0] == "X" && field[i, 1] == "X" && field[i, 2] == "X")||(field[0, j] == "X" && field[1, j] == "X" && field[2, j] == "X"))
+                    if ((field[i, 0] == "X" && field[i, 1] == "X" && field[i, 2] == "X") || (field[0, j] == "X" && field[1, j] == "X" && field[2, j] == "X"))
                     {
                         Console.WriteLine("X WIN!!!");
                         return true;
                     }
-                    else if ((field[i, 0] == "O" && field[i, 1] == "O" && field[i, 2] == "O")|| (field[0, j] == "O" && field[1, j] == "O" && field[2, j] == "O"))
+                    else if ((field[i, 0] == "O" && field[i, 1] == "O" && field[i, 2] == "O") || (field[0, j] == "O" && field[1, j] == "O" && field[2, j] == "O"))
                     {
                         Console.WriteLine("O WIN!!!");
                         return true;
                     }
-                   
+
                 }
+            }
+
+            if (count == 9)
+            {
+                Console.WriteLine("DRAW!!!");
+                return true;
             }
 
             return false;
