@@ -1,1 +1,102 @@
 
+this program is a game XO or tic-tac-toe but we create AI to play with you
+
+//test programe 
+
+
+Welcome to Tic-Tac-Toe!!!
+Choose for user X
+1.For Player
+2.For AI-Easy
+3.For AI-Medium
+4.For AI-Hard
+Enter your input: 1
+User X choose player!
+Choose for user O
+1.For Player
+2.For AI-Easy
+3.For AI-Medium
+4.For AI-Hard
+Enter your input: 4
+User O choose AI-Hard!
+     |     |
+  1  |  2  |  3
+_____|_____|_____
+     |     |
+  4  |  5  |  6
+_____|_____|_____
+     |     |
+  7  |  8  |  9
+     |     |
+User X Enter your field: 1
+     |     |
+  X  |  2  |  3
+_____|_____|_____
+     |     |
+  4  |  5  |  6
+_____|_____|_____
+     |     |
+  7  |  8  |  9
+     |     |
+User O Enter your field:  
+  X  |  2  |  3
+_____|_____|_____
+     |     |
+  4  |  O  |  6
+_____|_____|_____
+     |     |
+  7  |  8  |  9
+     |     |
+User X Enter your field: 4
+     |     |
+  X  |  2  |  3
+_____|_____|_____
+     |     |
+  X  |  O  |  6
+_____|_____|_____
+     |     |
+  7  |  8  |  9
+     |     |
+User O Enter your field:    
+  X  |  2  |  3
+_____|_____|_____
+     |     |
+  X  |  O  |  6
+_____|_____|_____
+     |     |
+  O  |  8  |  9
+     |     |
+User X Enter your field: 2
+     |     |
+  X  |  X  |  3
+_____|_____|_____
+     |     |
+  X  |  O  |  6
+_____|_____|_____
+     |     |
+  O  |  8  |  9
+     |     |
+User O Enter your field:   
+  X  |  X  |  O
+_____|_____|_____
+     |     |
+  X  |  O  |  6
+_____|_____|_____
+     |     |
+  O  |  8  |  9
+     |     |
+O WIN!!!
+     |     |
+  X  |  X  |  O
+_____|_____|_____
+     |     |
+  X  |  O  |  6
+_____|_____|_____
+     |     |
+  O  |  8  |  9
+     |     |
+O WIN!!!
+Reset the game or exits the programe?
+1.Reset the game!
+2.Exits the program!
+Enter your input:
