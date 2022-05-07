@@ -3,79 +3,15 @@ for manage your transaction
 
 program test...
 
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) Back.
-2
-Enter purchase name:
-MAcc jean
-Enter its price:
-20
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) Back.
-2
-Enter purchase name:
-Mc Hood
-Enter its price:
-20
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) Back.
-3
-Enter purchase name:
-avenger
-Enter its price:
-7
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) Back.
-3
-Enter purchase name:
-spider man
-Enter its price:
-7
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) Back.
-4
-Enter purchase name:
-3m tape
-Enter its price:
-3
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) Back.
-4
-Enter purchase name:
-glue
-Enter its price:
-3
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) Back.
-5
+1) Add income.
+2) Add purchase.
+3) Show list of purchases.
+4) Balance.
+5) Save.
+6) Load.
+0) Exit.
+Enter your input: >w
+Wrong input!
 
 Choose your action:
 1) Add income.
@@ -85,8 +21,13 @@ Choose your action:
 5) Save.
 6) Load.
 0) Exit.
-Enter your input: 4
-Your balance is: $99,937.00
+Enter your input: >1
+
+Enter income:>10000O
+Wrong input.
+
+Enter income again: >10000000
+transaction success!
 
 Choose your action:
 1) Add income.
@@ -96,68 +37,66 @@ Choose your action:
 5) Save.
 6) Load.
 0) Exit.
-Enter your input: 3
+Enter your input: >2
+
 Choose the type of purchase.
+1) Food.
+2) Clothes.
+3) Entertainment.
+4) Other.
+5) Back.
+Enter your input: >1
+Enter purchase name:
+>Chicken soup
+Enter its price:
+>2.5
+transaction success!
+
+Choose the type of purchase.
+1) Food.
+2) Clothes.
+3) Entertainment.
+4) Other.
+5) Back.
+Enter your input: >3
+Enter purchase name:
+>avenger
+Enter its price:
+>2.5
+transaction success!
+
+Choose the type of purchase.
+1) Food.
+2) Clothes.
+3) Entertainment.
+4) Other.
+5) Back.
+Enter your input: >5
+Back to menu...
+
+Choose your action:
+1) Add income.
+2) Add purchase.
+3) Show list of purchases.
+4) Balance.
+5) Save.
+6) Load.
+0) Exit.
+Enter your input: >3
+
+Choose the type of List.
 1) Food.
 2) Clothes.
 3) Entertainment.
 4) Other.
 5) All.
 6) Back.
-1
-Food:
-Burger $2.00
-pepsi $1.00
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-2
-Clothes:
-MAcc jean  $20.00
-Mc Hood $20.00
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-3
-Entertainment:
-avenger $7.00
-spider man $7.00
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-4
-Other:
-3m tape $3.00
-glue $3.00
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-5
+Enter your input: >5
+
 ALL:
-Burger $2.00
-pepsi $1.00
-MAcc jean  $20.00
-Mc Hood $20.00
-avenger $7.00
-spider man $7.00
-3m tape $3.00
-glue $3.00
+Chicken soup $2.50
+avenger $2.50
+
 Choose the type of purchase.
 1) Food.
 2) Clothes.
@@ -165,7 +104,8 @@ Choose the type of purchase.
 4) Other.
 5) All.
 6) Back.
-6
+Enter your input:>6
+Back to menu...
 
 Choose your action:
 1) Add income.
@@ -186,7 +126,7 @@ Choose your action:
 5) Save.
 6) Load.
 0) Exit.
-Enter your input: 6
+Enter your input:6
 Data loaded successfully.
 
 Choose your action:
@@ -197,98 +137,11 @@ Choose your action:
 5) Save.
 6) Load.
 0) Exit.
-Enter your input: 4
-Your balance is: $99,937.00
-
-Choose your action:
-1) Add income.
-2) Add purchase.
-3) Show list of purchases.
-4) Balance.
-5) Save.
-6) Load.
-0) Exit.
-Enter your input: 3
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-1
-Food:
-Burger $2.00
-pepsi $1.00
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-2
-Clothes:
-MAcc jean $20.00
-Mc Hood $20.00
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-3
-Entertainment:
-avenger $7.00
-spider man $7.00
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-4
-Other:
-3m tape $3.00
-glue $3.00
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-5
-ALL:
-Burger $2.00
-pepsi $1.00
-MAcc jean $20.00
-Mc Hood $20.00
-avenger $7.00
-spider man $7.00
-3m tape $3.00
-glue $3.00
-Choose the type of purchase.
-1) Food.
-2) Clothes.
-3) Entertainment.
-4) Other.
-5) All.
-6) Back.
-6
-
-Choose your action:
-1) Add income.
-2) Add purchase.
-3) Show list of purchases.
-4) Balance.
-5) Save.
-6) Load.
-0) Exit.
 Enter your input: 0
+Good bye.
 
-C:\Users\thund\source\repos\Budget Manager\Budget Manager\bin\Debug\net5.0\Budget Manager.exe (process 8180) exited with code 0.
-To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
-Press any key to close this window . . .
+
+
+
+
+
